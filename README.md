@@ -35,6 +35,16 @@ This will generate the necessary database tables and apply any pending schema ch
 
 ---
 
+## IMPORTANT
+
+### Connection string should look like this
+```
+  "ConnectionStrings": {
+    "DefaultConnection" : "Server=<YourServerName>;Database=<YourDbName>;Trusted_connection=true;TrustServerCertificate=true;"
+  }
+
+```
+
 ### Notes:
 
 - Ensure that your **connection string** in `appsettings.json` is correctly configured for SQL Server.
