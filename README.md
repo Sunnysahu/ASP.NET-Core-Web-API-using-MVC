@@ -6,8 +6,8 @@ At the moment, we're using **.NET 8.0**, so the installed packages are version *
 
 ### Required NuGet Packages:
 
-- `Microsoft.EntityFrameworkCore.SqlServer`
-- `Microsoft.EntityFrameworkCore.Tools`
+- `Microsoft.EntityFrameworkCore.SqlServer` <button onclick="navigator.clipboard.writeText('Microsoft.EntityFrameworkCore.SqlServer')">Copy</button>
+- `Microsoft.EntityFrameworkCore.Tools` <button onclick="navigator.clipboard.writeText('Microsoft.EntityFrameworkCore.Tools')">Copy</button>
 
 ## Code-First Approach
 
@@ -25,11 +25,15 @@ To execute SQL queries and apply migrations, follow these steps:
 add-migration "InitialMigration"
 ```
 
+<button onclick="navigator.clipboard.writeText('add-migration \"InitialMigration\"')">Copy</button>
+
 #### Apply Migration to Database:
 
 ```powershell
 update-database
 ```
+
+<button onclick="navigator.clipboard.writeText('update-database')">Copy</button>
 
 This will generate the necessary database tables and apply any pending schema changes.
 
