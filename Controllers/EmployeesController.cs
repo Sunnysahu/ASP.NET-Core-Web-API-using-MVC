@@ -19,7 +19,7 @@ namespace AdminPortal.Controllers
         }
 
 
-        // Getting all DATA from DB
+        // Fetching all DATA from DB
 
         [HttpGet]
         public IActionResult GetAllEmployees()
@@ -32,7 +32,7 @@ namespace AdminPortal.Controllers
 
         }
 
-        // Getting Data from DB using GUID
+        // Fetching Data from DB using GUID
 
         [HttpGet]
         [Route("{id:guid}")]
@@ -67,6 +67,27 @@ namespace AdminPortal.Controllers
 
             return Ok(employeeEntity);
 
+        }
+
+        // Updating DATA to DB
+
+        [HttpPut]
+        [Route("{id:guid}")]
+        public IActionResult UpdateEmployee(Guid id, UpdateEmployeeDto updateEmployeeDto)
+        {
+            var employee = dbContext.Employees.Find(id);
+
+            if (employee is null)
+            {
+                return NotFound();
+            }
+
+            employee.Name = updateEmployeeDto.Name;
+            employee.Email = updateEmployeeDto.Email;
+            employee.Phone = updateEmployeeDto.Phone;
+            employee.Salary = updateEmployeeDto.Salary;
+            dbContext.SaveChanges();
+            return Ok(employee);
         }
     }
 }
